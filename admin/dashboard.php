@@ -1,6 +1,6 @@
 <?php
 
-require "auth/session_check.php";
+require "session_check.php";
 
 ?>
 
