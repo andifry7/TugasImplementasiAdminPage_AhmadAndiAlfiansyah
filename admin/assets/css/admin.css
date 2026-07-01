@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #081120;
+  color: #fff;
+}
+
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 270px;
+  background: #0f172a;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.topbar {
+  height: 80px;
+  background: #111827;
+}
+
+.content {
+  padding: 30px;
+}
