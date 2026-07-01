@@ -37,13 +37,14 @@ if (isset($_SESSION['login'])) {
             <p>Welcome back, Admin</p>
         </div>
 
-        <form>
+        <form action="admin/auth/login_process.php" method="POST">
             <div class="mb-4">
                 <label>Username</label>
                 <input
                     type="text"
                     class="form-control"
-                    placeholder="Enter username">
+                    placeholder="Enter username"
+                    name="username" required>
 
             </div>
             <div class="mb-4">
@@ -51,9 +52,10 @@ if (isset($_SESSION['login'])) {
                 <input
                     type="password"
                     class="form-control"
-                    placeholder="Enter password">
+                    placeholder="Enter password"
+                    name="password" required>
             </div>
-            <button class="btn-login">
+            <button class="btn-login" type="submit">
                 <i class="bi bi-box-arrow-in-right"></i>
                 Login
             </button>

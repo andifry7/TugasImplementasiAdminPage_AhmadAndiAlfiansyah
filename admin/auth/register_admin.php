@@ -1,5 +1,5 @@
 <?php
-require "../config/koneksi.php";
+require "../../config/koneksi.php";
 
 if (isset($_POST['register'])) {
 
