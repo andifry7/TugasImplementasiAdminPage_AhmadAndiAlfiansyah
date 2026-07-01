@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require "../../config/koneksi.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,12 +14,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($query) == 1) {
         $admin = mysqli_fetch_assoc($query);
         if (password_verify($password, $admin['password'])) {
-            // Login valid
-            echo "
-            <script>
-                alert('Login berhasil!');
-                window.location='../login.php';
-            </script>";
+
+        $_SESSION['login'] = true;
+        $_SESSION['id_admin'] = $admin['id'];
+        $_SESSION['nama'] = $admin['nama'];
+        $_SESSION['username'] = $admin['username'];
+
+        echo "
+        <script>
+            alert('Session berhasil dibuat!');
+            window.location='../../login.php';
+        </script>";
+
         } else {
             echo "
             <script>
