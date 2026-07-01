@@ -22,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         echo "
         <script>
-            alert('Session berhasil dibuat!');
-            window.location='../../login.php';
+            alert('Login berhasil!');
+            window.location='../../index.php';
         </script>";
 
         } else {

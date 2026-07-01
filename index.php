@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -75,9 +79,37 @@
               </li>
             </ul>
 
-            <a href="#contact" class="nav-contact-btn">
-              Contact Us
-            </a>
+            <?php if (!isset($_SESSION['login'])) : ?>
+              <a href="login.php" class="nav-contact-btn">
+                  Login
+              </a>
+            <?php else : ?>
+
+              <div class="dropdown">
+                  <a
+                      class="nav-contact-btn dropdown-toggle"
+                      href="#"
+                      data-bs-toggle="dropdown">
+                      <i class="bi bi-person-circle"></i>
+                      <?= htmlspecialchars($_SESSION['nama']) ?>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                      <li>
+                          <a class="dropdown-item" href="admin/dashboard.php">
+                              <i class="bi bi-speedometer2"></i>
+                              Dashboard Admin
+                          </a>
+                      </li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li>
+                          <a class="dropdown-item text-danger" href="admin/logout.php">
+                              <i class="bi bi-box-arrow-right"></i>
+                              Logout
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>

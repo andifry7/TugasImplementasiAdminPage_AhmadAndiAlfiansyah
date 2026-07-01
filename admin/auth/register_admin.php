@@ -23,7 +23,7 @@ if (isset($_POST['register'])) {
 
         echo "<script>
             alert('Admin berhasil dibuat');
-            window.location='login.php';
+            window.location='../../login.php';
         </script>";
     }
 }
@@ -40,38 +40,30 @@ if (isset($_POST['register'])) {
 
 <body class="bg-dark">
     <div class="container py-5">
-<div class="card mx-auto" style="max-width:500px">
-
-<div class="card-body">
-
-<h3 class="mb-4 text-center">
-Register Admin
-</h3>
-
-<form method="POST">
-
-<div class="mb-3">
-<label>Nama</label>
-<input type="text" name="nama" class="form-control" required>
-</div>
-
-<div class="mb-3">
-<label>Username</label>
-<input type="text" name="username" class="form-control" required>
-</div>
-
-<div class="mb-4">
-<label>Password</label>
-<input type="password" name="password" class="form-control" required>
-</div>
-
-<button class="btn btn-primary w-100" name="register">
-Buat Admin
-</button>
-
-</form>
-</div>
-</div>
+        <div class="card mx-auto" style="max-width:500px">
+            <div class="card-body">
+            <h3 class="mb-4 text-center">
+            Register Admin
+            </h3>
+            <form method="POST">
+            <div class="mb-3">
+                <label>Nama</label>
+                <input type="text" name="nama" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" required>
+            </div>
+            <div class="mb-4">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+            <button class="btn btn-primary w-100" name="register">
+            Buat Admin
+            </button>
+            </form>
+        </div>
+    </div>
 </div>
 
 </body>
