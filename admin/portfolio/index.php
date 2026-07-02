@@ -62,7 +62,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM portfolio ORDER BY id DESC");
                                             "development" => "Development"
                                         ];
                                         ?>
-                                        
+
                                         <span class="badge bg-primary">
                                             <?= $badge[$row['category']] ?? $row['category']; ?>
                                         </span>
@@ -73,8 +73,10 @@ $result = mysqli_query($koneksi, "SELECT * FROM portfolio ORDER BY id DESC");
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
                                         <a href="hapus.php?id=<?= $row['id']; ?>"
-                                            class="btn btn-danger btn-sm">
+                                        class="btn btn-danger btn-sm"
+                                        onclick="return confirm('Yakin ingin menghapus portfolio ini?')">
                                             <i class="bi bi-trash"></i>
+                                        </a>i-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
