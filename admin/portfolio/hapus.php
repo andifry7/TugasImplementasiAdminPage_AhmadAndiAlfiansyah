@@ -7,7 +7,7 @@ $id = (int) $_GET['id'];
 
 $query = mysqli_query(
     $koneksi,
-    "SELECT image FROM portfolio WHERE id = '$id'"
+    "SELECT image FROM team WHERE id = '$id'"
 );
 
 $data = mysqli_fetch_assoc($query);
@@ -26,7 +26,7 @@ if (
 
 mysqli_query(
     $koneksi,
-    "DELETE FROM portfolio WHERE id = '$id'"
+    "DELETE FROM team WHERE id = '$id'"
 );
 
 header("Location: index.php");
