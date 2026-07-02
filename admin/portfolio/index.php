@@ -76,7 +76,6 @@ $result = mysqli_query($koneksi, "SELECT * FROM portfolio ORDER BY id DESC");
                                         class="btn btn-danger btn-sm"
                                         onclick="return confirm('Yakin ingin menghapus portfolio ini?')">
                                             <i class="bi bi-trash"></i>
-                                        </a>i-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
