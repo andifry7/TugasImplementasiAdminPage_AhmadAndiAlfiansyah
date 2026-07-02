@@ -30,7 +30,7 @@ $totalAdmin = mysqli_num_rows(
                         <?= $_SESSION['username']; ?>
                     </h2>
                     <p>
-                        Manage your Pixel++ Company Profile from one beautiful dashboard.
+                        Manage your Pixel++ Company Profile from this dashboard.
                     </p>
                 </div>
             </div>
