@@ -11,8 +11,10 @@
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
             <li>
-                <a class="dropdown-item" href="../index.php">
-                    <i class="bi bi-house-door"></i>
+                <a href="<?= BASE_URL ?>index.php"
+                class="btn btn-outline-primary"
+                target="_blank">
+                    <i class="bi bi-globe"></i>
                     View Website
                 </a>
             </li>
@@ -20,9 +22,8 @@
                 <hr class="dropdown-divider">
             </li>
             <li>
-                <a class="dropdown-item text-danger"
-                    href="auth/logout.php">
-                    <i class="bi bi-box-arrow-right"></i>
+                <a class="dropdown-item" href="<?= BASE_URL ?>admin/logout.php">
+                    <i class="bi bi-box-arrow-right me-2"></i>
                     Logout
                 </a>
             </li>

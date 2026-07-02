@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+require "config/koneksi.php";
+
 ?>
 
 <!doctype html>
@@ -368,48 +371,47 @@ session_start();
           </button>
         </div>
         <div class="row g-4">
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="portfolio-card" data-category="web">
-              <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
-                alt=""
-                class="img-fluid"
-              />
-              <div class="portfolio-content">
-                <span>Web Design</span>
+          <?php
+          $query = mysqli_query(
+              $koneksi,
+              "SELECT * FROM portfolio ORDER BY created_at DESC"
+          );
 
-                <h3>Nova Dashboard</h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="portfolio-card" data-category="development">
-              <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
-                alt=""
-                class="img-fluid"
-              />
-              <div class="portfolio-content">
-                <span>Development</span>
+          while ($row = mysqli_fetch_assoc($query)) :
 
-                <h3>Tech Startup Landing Page</h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="portfolio-card" data-category="branding">
-              <img
-                src="https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1200&auto=format&fit=crop"
-                alt=""
-                class="img-fluid"
-              />
-              <div class="portfolio-content">
-                <span>Branding</span>
+          ?>
 
-                <h3>Creative Brand Identity</h3>
+          <div class="col-md-6 col-lg-4 reveal">
+              <div
+                  class="portfolio-card"
+                  data-category="<?= $row['category']; ?>">
+                  <img
+                      src="admin/portfolio/upload/<?= $row['image']; ?>"
+                      alt="<?= htmlspecialchars($row['title']); ?>"
+                      class="img-fluid">
+                  <div class="portfolio-content">
+                      <span>
+                      <?php
+                      switch ($row['category']) {
+                          case "web":
+                              echo "Web Design";
+                              break;
+                          case "branding":
+                              echo "Branding";
+                              break;
+                          case "development":
+                              echo "Development";
+                              break;
+                      }
+                      ?>
+                      </span>
+                      <h3>
+                          <?= htmlspecialchars($row['title']); ?>
+                      </h3>
+                  </div>
               </div>
-            </div>
           </div>
+          <?php endwhile; ?>
         </div>
       </div>
     </section>
