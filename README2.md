@@ -1,13 +1,10 @@
 ## Username dan Password Admin
 
-1.  Username: admin
-    Password: admin123
+1.  Username: admin | Password: admin123
 
-2.  Username: admin2
-    Password: admin123
+2.  Username: admin2 | Password: admin123
 
-3.  Username: admin3
-    Password: admin333
+3.  Username: admin3 | Password: admin333
 
 ## Halaman dengan fungsi CRUD
 
