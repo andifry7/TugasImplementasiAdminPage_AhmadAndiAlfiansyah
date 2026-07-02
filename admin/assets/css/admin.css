@@ -18,29 +18,99 @@ body {
 
 .sidebar {
   position: relative;
-  overflow: hidden;
   width: 270px;
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(20px);
+  min-height: 100vh;
+  padding: 35px 22px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(18px);
   border-right: 1px solid rgba(96, 165, 250, 0.12);
+  overflow: hidden;
 }
 
 .sidebar::before {
   content: "";
   position: absolute;
-  width: 260px;
-  height: 260px;
+  width: 280px;
+  height: 280px;
   background: #2563eb;
-  filter: blur(120px);
   opacity: 0.18;
-  top: -120px;
-  left: -100px;
+  filter: blur(130px);
+  top: -140px;
+  left: -120px;
 }
 
 .logo {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 50px;
+}
+
+.sidebar-logo {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 45px;
+}
+
+.sidebar-logo h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.sidebar-logo span {
+  color: #60a5fa;
+}
+
+.sidebar-logo small {
+  color: #94a3b8;
+  letter-spacing: 1px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.sidebar-menu li {
+  margin-bottom: 12px;
+}
+
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: 0.35s;
+}
+
+.sidebar-menu i {
+  font-size: 20px;
+  color: #60a5fa;
+}
+
+.sidebar-menu a:hover {
+  background: rgba(37, 99, 235, 0.15);
+  transform: translateX(6px);
+}
+
+.sidebar-menu li.active a {
+  background: linear-gradient(
+    90deg,
+    rgba(37, 99, 235, 0.35),
+    rgba(37, 99, 235, 0.08)
+  );
+
+  border: 1px solid rgba(96, 165, 250, 0.15);
+  box-shadow: 0 0 18px rgba(37, 99, 235, 0.18);
 }
 
 .sidebar ul {
@@ -67,6 +137,16 @@ body {
 .sidebar a:hover {
   background: #2563eb;
   color: #fff;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  position: relative;
+  z-index: 2;
+  color: #64748b;
+  text-align: center;
+  font-size: 13px;
+  padding-top: 30px;
 }
 
 .main-content {

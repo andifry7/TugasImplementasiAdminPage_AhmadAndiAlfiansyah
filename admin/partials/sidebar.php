@@ -1,25 +1,29 @@
 <div class="sidebar">
-    <div class="logo">
-        <h2>Pixel++</h2>
+    <div class="sidebar-logo">
+        <h2>Pixel<span>++</span></h2>
+        <small>Admin Panel</small>
     </div>
-    <ul>
-        <li class="active">
+    <ul class="sidebar-menu">
+        <li class="<?= basename($_SERVER['PHP_SELF']) == 'dashboard.php' ? 'active' : '' ?>">
             <a href="../admin/dashboard.php">
-                <i class="bi bi-grid"></i>
-                Dashboard
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Dashboard</span>
             </a>
         </li>
-        <li>
+        <li class="<?= strpos($_SERVER['PHP_SELF'], 'portfolio') ? 'active' : '' ?>">
             <a href="../admin/portfolio/">
-                <i class="bi bi-collection"></i>
-                Portfolio
+                <i class="bi bi-collection-fill"></i>
+                <span>Portfolio</span>
             </a>
         </li>
-        <li>
+        <li class="<?= strpos($_SERVER['PHP_SELF'], 'team') ? 'active' : '' ?>">
             <a href="../admin/team/">
-                <i class="bi bi-people"></i>
-                Team
+                <i class="bi bi-people-fill"></i>
+                <span>Team</span>
             </a>
         </li>
     </ul>
+    <div class="sidebar-footer">
+        <small>Pixel++ Admin v1.0</small>
+    </div>
 </div>
