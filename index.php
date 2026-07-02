@@ -91,7 +91,7 @@ session_start();
                       href="#"
                       data-bs-toggle="dropdown">
                       <i class="bi bi-person-circle"></i>
-                      <?= htmlspecialchars($_SESSION['nama']) ?>
+                      <?= $_SESSION['username']; ?>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                       <li>

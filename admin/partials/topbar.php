@@ -1,18 +1,23 @@
 <div class="topbar">
-    <h4>Dashboard</h4>
-    <div class="profile">
-        <button class="btn btn-profile dropdown-toggle"
+    <div class="topbar-title">
+        <h3>Dashboard</h3>
+    </div>
+    <div class="dropdown">
+        <button
+            class="btn btn-profile dropdown-toggle"
             data-bs-toggle="dropdown">
             <i class="bi bi-person-circle"></i>
-            Administrator
+            <?= $_SESSION['username']; ?>
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
             <li>
-                <a class="dropdown-item"
-                    href="../index.php">
-                    <i class="bi bi-house"></i>
-                    Website
+                <a class="dropdown-item" href="../index.php">
+                    <i class="bi bi-house-door"></i>
+                    View Website
                 </a>
+            </li>
+            <li>
+                <hr class="dropdown-divider">
             </li>
             <li>
                 <a class="dropdown-item text-danger"
