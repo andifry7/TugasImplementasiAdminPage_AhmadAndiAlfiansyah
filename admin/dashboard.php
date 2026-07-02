@@ -2,6 +2,19 @@
 
 require "session_check.php";
 include "partials/header.php";
+require "../config/koneksi.php";
+
+$totalPortfolio = mysqli_num_rows(
+    mysqli_query($koneksi, "SELECT * FROM portfolio")
+);
+
+$totalTeam = mysqli_num_rows(
+    mysqli_query($koneksi, "SELECT * FROM team")
+);
+
+$totalAdmin = mysqli_num_rows(
+    mysqli_query($koneksi, "SELECT * FROM admin")
+);
 
 ?>
 
@@ -10,42 +23,98 @@ include "partials/header.php";
     <div class="main-content">
         <?php include "partials/topbar.php"; ?>
         <div class="container-fluid">
-            <div class="welcome-card">
-                <h2>Welcome Back</h2>
-                <p>
-                    Manage your Pixel++ company profile from one place.
-                </p>
+            <!-- Welcome -->
+            <div class="welcome-card mb-4">
+                <div>
+                    <h2><i class="bi bi-stars"></i>Welcome Back,
+                        <?= $_SESSION['username']; ?>
+                    </h2>
+                    <p>
+                        Manage your Pixel++ Company Profile from one beautiful dashboard.
+                    </p>
+                </div>
             </div>
+
+            <!-- Statistic -->
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="bi bi-collection-fill"></i>
+                        </div>
+                        <div>
+                            <h6>Total Portfolio</h6>
+                            <h2><?= $totalPortfolio ?></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <div>
+                            <h6>Total Team</h6>
+                            <h2><?= $totalTeam ?></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="bi bi-person-lock"></i>
+                        </div>
+                        <div>
+                            <h6>Administrator</h6>
+                            <h2><?= $totalAdmin ?></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Information -->
             <div class="row mt-4 g-4">
-                <div class="col-md-4">
-                    <div class="dashboard-card">
-                        <i class="bi bi-collection"></i>
-                        <h3>Portfolio</h3>
-                        <span>0</span>
+                <div class="col-lg-8">
+                    <div class="activity-card">
+                        <h4>
+                            <i class="bi bi-lightning-charge-fill"></i>
+                            Dashboard Information
+                        </h4>
+                        <p class="mt-3">
+                            This admin panel allows you to manage the dynamic content
+                            of the Pixel++ website. You can add, edit, or delete
+                            portfolio projects and team members easily.
+                        </p>
+                        <div class="info-box">
+                            <i class="bi bi-shield-lock-fill"></i>
+                            <span>
+                                Secure session authentication is currently active.
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="dashboard-card">
-                        <i class="bi bi-people"></i>
-                        <h3>Team</h3>
-                        <span>0</span>
+                <div class="col-lg-4">
+                    <div class="activity-card">
+                        <h4>
+                            <i class="bi bi-clock-history"></i>
+                            Quick Access
+                        </h4>
+                        <div class="quick-menu">
+                            <a href="portfolio/">
+                                <i class="bi bi-images"></i>
+                                Portfolio
+                            </a>
+                            <a href="team/">
+                                <i class="bi bi-people"></i>
+                                Team
+                            </a>
+                            <a href="#">
+                                <i class="bi bi-gear"></i>
+                                Settings
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="dashboard-card">
-                        <i class="bi bi-bar-chart"></i>
-                        <h3>Visitors</h3>
-                        <span>0</span>
-                    </div>
-                </div>
-            </div>
-            <div class="activity-card mt-4">
-                <h4>Recent Activity</h4>
-                <ul>
-                    <li>Portfolio updated</li>
-                    <li>Team member added</li>
-                    <li>Admin logged in</li>
-                </ul>
             </div>
         </div>
     </div>
