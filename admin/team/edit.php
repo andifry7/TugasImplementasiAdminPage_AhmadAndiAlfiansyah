@@ -108,7 +108,7 @@ if (isset($_POST['update'])) {
                             value="<?= htmlspecialchars($data['name']) ?>"
                             required>
                     </div>
-                    < class="mb-4">
+                    <div class="mb-4">
                         <label class="form-label">
                             Position
                         </label>
