@@ -581,107 +581,35 @@ require "config/koneksi.php";
 
         <!-- Team Grid -->
         <div class="row g-4">
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="team-card-modern">
-              <div class="team-image">
-                <img
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
 
-              <div class="team-card-content">
-                <h3>Milan T.</h3>
+        <?php
 
-                <p>Creative Director</p>
-              </div>
+        $query = mysqli_query(
+            $koneksi,
+            "SELECT * FROM team ORDER BY created_at DESC"
+        );
+
+        while ($row = mysqli_fetch_assoc($query)) :
+
+        ?>
+            <div class="col-md-6 col-lg-4 reveal">
+                <div class="team-card-modern">
+                    <div class="team-image">
+                        <img
+                            src="admin/team/upload/<?= htmlspecialchars($row['image']); ?>"
+                            alt="<?= htmlspecialchars($row['name']); ?>">
+                    </div>
+                    <div class="team-card-content">
+                        <h3>
+                            <?= htmlspecialchars($row['name']); ?>
+                        </h3>
+                        <p>
+                            <?= htmlspecialchars($row['position']); ?>
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="team-card-modern">
-              <div class="team-image">
-                <img
-                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-
-              <div class="team-card-content">
-                <h3>Daniel K.</h3>
-
-                <p>Frontend Developer</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="team-card-modern">
-              <div class="team-image">
-                <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-
-              <div class="team-card-content">
-                <h3>Emma L.</h3>
-
-                <p>UI/UX Designer</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="team-card-modern">
-              <div class="team-image">
-                <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1200&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-
-              <div class="team-card-content">
-                <h3>Sophia R.</h3>
-
-                <p>Brand Designer</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="team-card-modern">
-              <div class="team-image">
-                <img
-                  src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=1200&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-
-              <div class="team-card-content">
-                <h3>Arthur M.</h3>
-
-                <p>Web Developer</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="team-card-modern">
-              <div class="team-image">
-                <img
-                  src="https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=1200&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-
-              <div class="team-card-content">
-                <h3>Zebratic</h3>
-
-                <p>Motion Designer</p>
-              </div>
-            </div>
-          </div>
+        <?php endwhile; ?>
         </div>
       </div>
     </section>

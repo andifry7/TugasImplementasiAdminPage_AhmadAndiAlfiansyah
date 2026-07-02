@@ -71,51 +71,6 @@ $totalAdmin = mysqli_num_rows(
                     </div>
                 </div>
             </div>
-
-            <!-- Information -->
-            <div class="row mt-4 g-4">
-                <div class="col-lg-8">
-                    <div class="activity-card">
-                        <h4>
-                            <i class="bi bi-lightning-charge-fill"></i>
-                            Dashboard Information
-                        </h4>
-                        <p class="mt-3">
-                            This admin panel allows you to manage the dynamic content
-                            of the Pixel++ website. You can add, edit, or delete
-                            portfolio projects and team members easily.
-                        </p>
-                        <div class="info-box">
-                            <i class="bi bi-shield-lock-fill"></i>
-                            <span>
-                                Secure session authentication is currently active.
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="activity-card">
-                        <h4>
-                            <i class="bi bi-clock-history"></i>
-                            Quick Access
-                        </h4>
-                        <div class="quick-menu">
-                            <a href="portfolio/">
-                                <i class="bi bi-images"></i>
-                                Portfolio
-                            </a>
-                            <a href="team/">
-                                <i class="bi bi-people"></i>
-                                Team
-                            </a>
-                            <a href="#">
-                                <i class="bi bi-gear"></i>
-                                Settings
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

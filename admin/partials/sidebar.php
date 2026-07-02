@@ -1,6 +1,6 @@
 <div class="sidebar">
     <div class="sidebar-logo">
-        <h2>Pixel<span>++</span></h2>
+        <h2>Pixel++</h2>
         <small>Admin Panel</small>
     </div>
     <ul class="sidebar-menu">
